@@ -1,0 +1,29 @@
+apply plugin: 'com.android.dynamic-feature'
+
+android {
+    compileSdkVersion 28
+    
+
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+    implementation project(path: ':core')
+
+    implementation "com.google.dagger:dagger-android:2.19"
+    implementation "com.google.dagger:dagger-android-support:2.19"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.19"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.19"
+}
