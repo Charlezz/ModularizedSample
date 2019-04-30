@@ -6,12 +6,8 @@ import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+
+@Component(modules = {AndroidSupportInjectionModule.class, BaseActivityBindingModule.class})
 @Singleton
-@Component(
-        modules = {
-                AndroidSupportInjectionModule.class,
-                ActivityBindingModule.class
-        }
-)
-public interface AppComponent extends AndroidInjector<App> {
+public interface AppComponent extends AndroidInjector<SampleApplication> {
 }

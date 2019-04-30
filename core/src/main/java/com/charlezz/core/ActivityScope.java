@@ -1,4 +1,4 @@
-package com.charlezz.modularizedsample;
+package com.charlezz.core;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

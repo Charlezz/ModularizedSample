@@ -1,4 +1,4 @@
-package com.charlezz.modularizedsample;
+package com.charlezz.core;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -7,5 +7,6 @@ import javax.inject.Scope;
 
 @Scope
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ModuleScope {
+public @interface FragmentScope {
+
 }

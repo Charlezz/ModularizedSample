@@ -1,3 +1,4 @@
+package com.charlezz.dynamic_feature;
 import dagger.Module;
 
 @Module

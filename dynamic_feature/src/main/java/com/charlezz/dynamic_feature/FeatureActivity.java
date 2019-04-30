@@ -1,3 +1,4 @@
+package com.charlezz.dynamic_feature;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 

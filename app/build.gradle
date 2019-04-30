@@ -18,6 +18,12 @@ android {
     }
     dynamicFeatures = [":dynamic_feature"]
     dataBinding.enabled = true
+
+}
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xmaxerrs" << "500"
+    }
 }
 
 dependencies {
@@ -28,13 +34,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.google.dagger:dagger:2.19'
-    implementation "com.google.dagger:dagger-android:2.19"
-    implementation "com.google.dagger:dagger-android-support:2.19"
-    annotationProcessor "com.google.dagger:dagger-android-processor:2.19"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.19"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.17"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.17"
     api 'com.google.android.play:core:1.4.1'
-    implementation project(path: ':core')
+    implementation project(':core')
 
 
 }
