@@ -10,7 +10,6 @@ import com.charlezz.core.ModuleInjector;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -19,7 +18,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class SampleApplication extends Application implements HasActivityInjector, HasSupportFragmentInjector {
+public class App extends Application implements HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
@@ -29,7 +28,7 @@ public class SampleApplication extends Application implements HasActivityInjecto
 
     private List<DispatchingAndroidInjector<Activity>> moduleActivityInjectors = new ArrayList<>();
     private List<DispatchingAndroidInjector<Fragment>> moduleFragmentInjectors = new ArrayList<>();
-    private Set<FeatureType> injectedModules = new HashSet<>();
+    private HashSet<FeatureType> injectedModules = new HashSet<>();
 
     private AppComponent appComponent;
 
@@ -90,7 +89,7 @@ public class SampleApplication extends Application implements HasActivityInjecto
             return;
         }
         try {
-            Class clazz = Class.forName(featureType.getClassName());
+            Class clazz = Class.forName(featureType.getInjectorName());
             ModuleInjector moduleInjector = (ModuleInjector) clazz.newInstance();
             moduleInjector.inject(this);
 

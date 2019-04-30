@@ -1,17 +1,22 @@
 package com.charlezz.modularizedsample;
 
 public enum FeatureType {
-    PHOTO_SELECTOR("com.nhn.android.band.photoselector.di.SelectorModuleInjector"),
-    EDITOR("com.nhn.android.band.editor.dagger.FeatureModuleInjector");
+    FEATURE("com.charlezz.dynamic_feature.FeatureActivity", "com.charlezz.dynamic_feature.FeatureModuleInjector");
+    //addtional feature here
 
+    private String activityName;
+    private String injectorName;
 
-    private String className;
-
-    FeatureType(String className) {
-        this.className = className;
+    FeatureType(String activityName, String injectorName) {
+        this.activityName = activityName;
+        this.injectorName = injectorName;
     }
 
-    public String getClassName() {
-        return className;
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public String getInjectorName() {
+        return injectorName;
     }
 }
