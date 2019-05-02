@@ -1,8 +1,14 @@
 package com.charlezz.core;
 
-import dagger.Component;
-import dagger.android.support.AndroidSupportInjectionModule;
+import javax.inject.Singleton;
 
-@Component(modules = {AndroidSupportInjectionModule.class, CoreModule.class})
+import dagger.Component;
+
+@Component(modules = {CoreModule.class})
+@Singleton
 public interface CoreComponent {
+    @Component.Builder
+    interface Builder{
+        CoreComponent build();
+    }
 }

@@ -1,4 +1,4 @@
-package com.charlezz.core;
+package com.charlezz.core.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

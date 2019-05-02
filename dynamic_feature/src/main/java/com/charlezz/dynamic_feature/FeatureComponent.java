@@ -1,14 +1,23 @@
 package com.charlezz.dynamic_feature;
 
-import com.charlezz.core.CoreModule;
-import com.charlezz.core.ModuleScope;
-import com.charlezz.modularizedsample.AppComponent;
+
+import com.charlezz.core.BaseActivityComponent;
+import com.charlezz.core.CoreComponent;
+import com.charlezz.core.di.scope.FeatureScope;
 
 import dagger.Component;
-import dagger.android.support.AndroidSupportInjectionModule;
 
-@Component(modules = {AndroidSupportInjectionModule.class, FeatureActivityBindingModule.class, CoreModule.class}, dependencies = {AppComponent.class})
-@ModuleScope
-public interface FeatureComponent {
-    void inject(FeatureModuleInjector injector);
+@Component(
+        modules = {FeatureModule.class},
+        dependencies = {CoreComponent.class})
+@FeatureScope
+public interface FeatureComponent extends BaseActivityComponent<FeatureActivity> {
+    interface Builder {
+        Builder featureActivity(FeatureActivity activity);
+
+        Builder coreComponent(CoreComponent coreComponent);
+
+        FeatureComponent build();
+    }
+
 }

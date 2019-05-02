@@ -1,5 +1,5 @@
 package com.charlezz.dynamic_feature;
-import com.charlezz.core.ActivityScope;
+import com.charlezz.core.di.scope.ActivityScope;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
