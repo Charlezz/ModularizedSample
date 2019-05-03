@@ -2,7 +2,7 @@ package com.charlezz.modularizedsample;
 
 import com.charlezz.core.BaseActivityComponent;
 import com.charlezz.core.CoreComponent;
-import com.charlezz.core.di.scope.FeatureScope;
+import com.charlezz.core.di.scope.ActivityScope;
 
 import dagger.BindsInstance;
 import dagger.Component;
@@ -12,7 +12,7 @@ import dagger.Component;
         modules = {MainModule.class},
         dependencies = CoreComponent.class
 )
-@FeatureScope
+@ActivityScope
 public interface MainComponent extends BaseActivityComponent<MainActivity> {
     @Component.Builder
     interface Builder {

@@ -36,4 +36,6 @@ dependencies {
     api "com.google.dagger:dagger-android-support:2.19"
     annotationProcessor "com.google.dagger:dagger-android-processor:2.17"
     annotationProcessor "com.google.dagger:dagger-compiler:2.17"
+
+    api 'com.google.android.play:core:1.4.1'
 }

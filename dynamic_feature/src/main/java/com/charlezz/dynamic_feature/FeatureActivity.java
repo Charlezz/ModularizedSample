@@ -27,8 +27,8 @@ public class FeatureActivity extends AppCompatActivity {
 
     void inject(){
         DaggerFeatureComponent.builder()
-                .featureActivity(this)
                 .coreComponent(App.getCoreComponent())
+                .featureActivity(this)
                 .build()
                 .inject(this);
     }
