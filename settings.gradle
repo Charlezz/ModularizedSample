@@ -1,1 +1,1 @@
-include ':app', ':dynamic_feature', ':core'
+include ':app', ':dynamic_feature', ':core', ':CoffeeApp', ':Starbucks'
