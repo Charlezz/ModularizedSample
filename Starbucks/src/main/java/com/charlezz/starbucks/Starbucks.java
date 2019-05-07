@@ -1,17 +1,16 @@
 package com.charlezz.starbucks;
 
-import com.charlezz.starbucks.Ingredient.IngredientModule;
+import javax.inject.Inject;
 
-import dagger.Component;
+public class Starbucks {
 
-@Component(modules = {IngredientModule.class})
-public interface Starbucks {
-    Americano makeAmericano();
-    Latte makeLatte();
+    @Inject
+    Americano americano;
+    @Inject
+    Latte latte;
 
-    @Component.Builder
-    interface Builder{
-        Starbucks build();
+    public Starbucks(){
+        DaggerStarbucksComponent.create().inject(this);
     }
-    void inject(Test test);
+
 }

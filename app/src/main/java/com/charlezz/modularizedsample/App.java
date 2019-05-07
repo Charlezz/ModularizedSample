@@ -7,6 +7,8 @@ import com.charlezz.core.DaggerCoreComponent;
 import com.google.android.play.core.splitcompat.SplitCompat;
 import com.google.android.play.core.splitcompat.SplitCompatApplication;
 
+import dagger.android.DaggerActivity;
+
 public class App extends SplitCompatApplication {
     private static CoreComponent coreComponent;
 
@@ -19,6 +21,7 @@ public class App extends SplitCompatApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        DaggerActivity
         coreComponent = DaggerCoreComponent.builder()
                 .application(this)
                 .build();
