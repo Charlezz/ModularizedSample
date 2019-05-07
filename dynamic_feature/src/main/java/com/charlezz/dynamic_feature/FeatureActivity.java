@@ -9,6 +9,9 @@ import com.charlezz.modularizedsample.App;
 
 import javax.inject.Inject;
 
+import dagger.android.AndroidInjection;
+import dagger.android.support.DaggerApplication;
+
 public class FeatureActivity extends AppCompatActivity {
 
     @Inject
@@ -22,6 +25,7 @@ public class FeatureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         inject();
         binding.setMessage(message);
+        DaggerApplication
 
     }
 

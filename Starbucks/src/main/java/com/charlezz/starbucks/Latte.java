@@ -1,11 +1,11 @@
 package com.charlezz.starbucks;
 
-import javax.inject.Inject;
-
 import com.charlezz.starbucks.Ingredient.Espresso;
 import com.charlezz.starbucks.Ingredient.Milk;
 
-public class Latte {
+import javax.inject.Inject;
+
+public class Latte implements Coffee {
     private Espresso espresso;
     private Milk milk;
 
@@ -13,5 +13,10 @@ public class Latte {
     public Latte(Espresso espresso, Milk milk){
         this.espresso = espresso;
         this.milk = milk;
+    }
+
+    @Override
+    public String name() {
+        return "라떼";
     }
 }
