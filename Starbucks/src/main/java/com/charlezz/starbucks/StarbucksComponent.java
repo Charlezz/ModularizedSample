@@ -4,13 +4,10 @@ import com.charlezz.starbucks.Ingredient.IngredientModule;
 
 import dagger.Component;
 
-@Component(modules = {IngredientModule.class})
+@Component(
+        modules = {IngredientModule.class},
+        dependencies = Worker.class
+        )
 public interface StarbucksComponent {
-//    Americano makeAmericano();
-//    Latte makeLatte();
-//    @Component.Builder
-//    interface Builder{
-//        StarbucksComponent build();
-//    }
     void inject(Starbucks app);
 }

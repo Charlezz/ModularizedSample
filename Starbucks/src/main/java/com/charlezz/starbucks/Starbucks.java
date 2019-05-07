@@ -3,14 +3,17 @@ package com.charlezz.starbucks;
 import javax.inject.Inject;
 
 public class Starbucks {
-
     @Inject
-    Americano americano;
-    @Inject
-    Latte latte;
+    Worker worker;
 
     public Starbucks(){
-        DaggerStarbucksComponent.create().inject(this);
+        inject();
     }
 
+    void inject(){
+        DaggerStarbucksComponent.builder()
+                .worker(DaggerWorker.create())
+                .build()
+                .inject(this);
+    }
 }
